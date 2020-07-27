@@ -6,12 +6,12 @@
 </template>
 
 <script>
-	import JiuHeader from '@/components/Header'
-	export default {
-		components: {
-			JiuHeader
-		}
+import JiuHeader from '@/components/Header'
+export default {
+	components: {
+		JiuHeader
 	}
+}
 </script>
 
 <style>

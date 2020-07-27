@@ -16,5 +16,9 @@ module.exports = {
   ],
   plugins: ['prettier'],
   // add your custom rules here
-  rules: {},
+  rules: {
+    "indent": 0,
+    "no-tabs":0,
+    "prettier/prettier": 0,
+  },
 }

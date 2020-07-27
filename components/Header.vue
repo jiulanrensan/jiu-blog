@@ -3,6 +3,7 @@
 		<div></div>
 	</header>
 </template>
+
 <script>
 export default {
 
@@ -10,7 +11,7 @@ export default {
 </script>
 
 <style scoped>
-	.header{
-		display: flex;
-	}
+.header{
+	display: flex;
+}
 </style>
