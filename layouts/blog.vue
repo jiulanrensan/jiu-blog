@@ -1,9 +1,18 @@
 <template>
   <div>
-    <div>博客导航栏</div>
+    <JiuHeader></JiuHeader>
     <Nuxt />
   </div>
 </template>
+
+<script>
+	import JiuHeader from '@/components/Header'
+	export default {
+		components: {
+			JiuHeader
+		}
+	}
+</script>
 
 <style>
 html {
