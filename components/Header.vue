@@ -7,15 +7,19 @@
 				</nuxt-link>
 			</div>
 			<nav class="jiu_header-nav">
-				<!-- <ul>
-					<li v-for="item in navItems" :key="item.value">{{item.label}}</li>
-				</ul> -->
-				<jiu-drop-down :dropDownContent="navItems">
-					<!-- 默认插槽 -->
-					<template>
-						首页<i class="el-icon-arrow-down el-icon--right"></i>
-					</template>
-				</jiu-drop-down>
+				<div class="jiu_header-gt980">
+					<ul>
+						<li v-for="item in navItems" :key="item.value">{{item.label}}</li>
+					</ul>
+				</div>
+				<div class="jiu_header-lt980">
+					<jiu-drop-down :dropDownContent="navItems">
+						<!-- 默认插槽 -->
+						<template>
+							首页<i class="el-icon-arrow-down el-icon--right"></i>
+						</template>
+					</jiu-drop-down>
+				</div>
 			</nav>
 		</div>
 	</header>
@@ -54,20 +58,36 @@ export default {
 
 		.jiu_header-nav{
 			margin-left: 30px;
-			// ul{
-			// 	height: 100%;
-			// 	margin-left: 10px;
-			// 	@include flexCenter(center);
+			
+			.jiu_header-lt980{
+				display: none;
+			}
 
-			// 	li{
-			// 		padding: 10px;
-			// 		&:hover{
-			// 			cursor: pointer;
-			// 			color: $--primary-color;
-			// 		}
-			// 	}
-			// }
+			.jiu_header-gt980{
+				ul{
+					height: 100%;
+					@include flexCenter(center);
+
+					li{
+						padding: 10px;
+						&:hover{
+							cursor: pointer;
+							color: $--primary-color;
+						}
+					}
+				}
+			}
+
+			@include maxWidth980 {
+				.jiu_header-lt980{
+					display: block;
+				}
+				.jiu_header-gt980{
+					display: none;
+				}
+			}
 		}
 	}
 }
+
 </style>

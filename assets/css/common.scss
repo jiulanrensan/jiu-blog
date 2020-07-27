@@ -55,3 +55,10 @@ body{
 @mixin transition($type, $time, $speed: ease-in-out) {
   transition: $type $time $speed;
 }
+
+// 媒体查询
+@mixin maxWidth980 {
+  @media (max-width: 980px) {
+    @content;
+  }
+}
