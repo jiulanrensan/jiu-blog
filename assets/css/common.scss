@@ -22,8 +22,8 @@ html {
 	box-sizing: border-box;
 }
 body{
-  min-width: 600px;
   background-color: $--bg-color;
+  outline: none;
 }
 
 // flex布局垂直居中, 水平居中/两端对齐/每个项目两侧的间隔相等
