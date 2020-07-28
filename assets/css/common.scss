@@ -56,6 +56,15 @@ body{
   width: 100%;
   #{$pos}: 0;
 }
+// 全屏
+@mixin fullPage {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
 // 动画
 @mixin transition($type, $time, $speed: ease-in-out) {
   transition: $type $time $speed;

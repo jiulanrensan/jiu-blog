@@ -23,13 +23,19 @@
 
 <style>
 .NuxtLogo {
-  animation: 1s appear;
+  animation: 2s appear ease-in-out infinite;
   margin: auto;
 }
 
 @keyframes appear {
   0% {
-    opacity: 0;
+    opacity: 1;
+  }
+  50% {
+    opacity: .1;
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>
