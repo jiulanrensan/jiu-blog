@@ -20,7 +20,7 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/css/common.scss';
 .article_info{
-  padding-left: $--basic-width;
+  padding: $--basic-width $--basic-width 0;
   @include flexCenter(left);
 }
 </style>

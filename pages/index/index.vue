@@ -17,7 +17,7 @@
             <ArticleInfo :content="articleInfo[index]"></ArticleInfo>
           </template>
           <template slot="article_action">
-            <p>action</p>
+            <ArticleAction :content="articleAction[index]"></ArticleAction>
           </template>
         </ArticleItem>
       </div>
