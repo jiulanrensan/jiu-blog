@@ -110,6 +110,7 @@ export default {
 
 		.jiu_header-write{
 			color: $--primary-color;
+			cursor: pointer;
 		}
 
 		.jiu_header-divider{
@@ -125,13 +126,16 @@ export default {
 
 		.jiu_header-user{
 			color: $--primary-color;
+			cursor: pointer;
 		}
 
 		@include maxWidth980 {
 			.jiu_header-lt980{
 				display: block;
 			}
-			.jiu_header-gt980{
+			.jiu_header-gt980,
+			.jiu_header-divider,
+			.jiu_header-write{
 				display: none;
 			}
 		}
