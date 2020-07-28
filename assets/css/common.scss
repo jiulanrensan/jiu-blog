@@ -1,8 +1,11 @@
 // variables
 $--primary-color: #007fff;
-$--bg-color: #f4f5f5;
+$--basic-bg-color: #f4f5f5;
+$--white-bg-color: #fff;
+$--font-color: #8492a6;
 $--max-width: 960px;
 $--basic-width: 10px;
+$--basic-font-size: 16px;
 
 *,
 *::before,
@@ -24,7 +27,7 @@ html {
 	box-sizing: border-box;
 }
 body{
-  background-color: $--bg-color;
+  background-color: $--basic-bg-color;
   outline: none;
 }
 
@@ -63,5 +66,19 @@ body{
   @media (max-width: 980px) {
     @content;
   }
+}
+
+// 统一的最大宽度样式
+@mixin maxWidth ($width) {
+  max-width: $width;
+  margin: auto;
+  @include maxWidth980{
+    width: 96%;
+  }
+}
+
+// 基本边框样式
+@mixin border($border) {
+  #{$border}: 1px solid $--basic-bg-color;
 }
 

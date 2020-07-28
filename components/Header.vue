@@ -49,14 +49,14 @@
 
 <script>
 import JiuDropDown from './DropDown'
-import {headerContent} from '@/service/defaultConfig'
+import {HEADER} from '@/service/defaultConfig'
 export default {
 	components: {
 		JiuDropDown
 	},
 	data () {
 		return {
-			navItems: headerContent,
+			navItems: HEADER,
 			searchContent: ''
 		}
 	},
@@ -70,17 +70,16 @@ export default {
 @import '@/assets/css/common.scss';
 
 .jiu_header{
-	background-color: #fff;
+	background-color: $--white-bg-color;
+	box-sizing: border-box;
+	height: 60px;
+	@include border(border-bottom);
 	@include absoluteBox(top);
 
 	.jiu_header-nav{
 		@include flexCenter(left);
-		max-width: $--max-width;
-		height: 60px;
-		margin: auto;
-		@include maxWidth980{
-			width: 96%;
-		}
+		height: inherit;
+		@include maxWidth($--max-width);
 
 		.jiu_header-img{
 			@include flexCenter(center);

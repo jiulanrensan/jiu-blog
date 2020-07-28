@@ -25,23 +25,24 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@import '@/assets/css/common.scss';
   .el-dropdown{
-    font-size: 16px;
+    font-size: $--basic-font-size;
   }
   .el-dropdown-link {
     cursor: pointer;
-    color: #409EFF;
+    color: $--primary-color;
     /* 去除点击后出现的边框 */
     outline: none;
   }
   .el-icon-arrow-down {
-    font-size: 16px;
+    font-size: $--basic-font-size;
   }
   .demonstration {
     display: block;
-    color: #8492a6;
-    font-size: 16px;
-    margin-bottom: 20px;
+    color: $--font-color;
+    font-size: $--basic-font-size;
+    margin-bottom: $--basic-width*2;
   }
 </style>
