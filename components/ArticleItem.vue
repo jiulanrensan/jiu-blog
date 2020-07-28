@@ -7,7 +7,9 @@
     <!-- 右边 -->
     <!-- 标题图 -->
     <div class="article_left">
+      <slot name="article_info"></slot>
       <p>{{content.title}}</p>
+      <slot name="article_action"></slot>
     </div>
     <div class="article_right">
       <!-- <img :src="content.screenshot" alt=""> -->

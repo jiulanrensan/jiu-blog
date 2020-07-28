@@ -12,7 +12,14 @@
         </nav>
       </section>
       <div class="left-content">
-        <ArticleItem v-for="item in recommends" :key="item.id" :content="item"></ArticleItem>
+        <ArticleItem v-for="(item, index) in recommends" :key="item.id" :content="item">
+          <template slot="article_info">
+            <ArticleInfo :content="articleInfo[index]"></ArticleInfo>
+          </template>
+          <template slot="article_action">
+            <p>action</p>
+          </template>
+        </ArticleItem>
       </div>
     </div>
     <div class="right"></div>
@@ -23,8 +30,7 @@
 import {HOMETITLE} from '@/service/defaultConfig'
 export default {
   asyncData (context) {
-    return {
-      recommends: [
+    const RECOMMENDS = [
         {
           category: {name: "前端", id: "5562b415e4b00c57d9b94ac8"},
           commentsCount: 5,
@@ -49,12 +55,30 @@ export default {
           viewerHasLiked: false
         }
       ]
+    return {
+      recommends: RECOMMENDS,
+      articleInfo: RECOMMENDS.map(el => {
+        return {
+          originalUrl: el.originalUrl,
+          user: el.user,
+          updatedAt: el.updatedAt,
+          tags: el.tags
+        }
+      }),
+      articleAction: RECOMMENDS.map(el => {
+        return {
+          likeCount: el.likeCount,
+          commentsCount: el.commentsCount
+        }
+      })
     }
   },
   data () {
     return {
       homeTitle: HOMETITLE,
-      recommends: []
+      recommends: [],
+      articleInfo: [],
+      articleAction: []
     }
   }
 }
@@ -66,7 +90,7 @@ export default {
   @include flexCenter(center);
   .left,
   .right{
-    height: $--basic-width*10;
+    // height: $--basic-width*10;
     background-color: $--white-bg-color;
   }
   .left{
