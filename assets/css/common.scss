@@ -104,3 +104,13 @@ body{
     color: $color;
   }
 }
+
+// 标题样式
+@mixin titlePara{
+  p{
+    font-size: $--basic-font-size*1.1;
+    font-weight: bold;
+    color: #000;
+    padding: $--basic-width;
+  }
+}
