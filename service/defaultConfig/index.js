@@ -17,3 +17,9 @@ export const CATEGORY = [
   { router: { path: '/welcome/life' }, title: '代码人生' },
   { router: { path: '/welcome/article' }, title: '阅读' }
 ]
+
+export const HOMETITLE = [
+  {'label': '热门', 'value': 'hot'},
+  {'label': '最新', 'value': 'last'},
+  {'label': '热榜', 'value': 'top'}
+]

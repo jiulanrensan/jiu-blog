@@ -34,12 +34,9 @@ export default {
     @include maxWidth($--max-width);
     li{
       padding: $--basic-width $--basic-width;
-      cursor: pointer;
+      @include cursor($--primary-color);
       &:first-child{
         padding-left: 0;
-      }
-      &:hover{
-        color: $--primary-color;
       }
     }
   }

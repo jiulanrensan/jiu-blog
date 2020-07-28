@@ -18,7 +18,8 @@ $--basic-font-size: 16px;
 html {
 	font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
 			Roboto, 'Helvetica Neue', Arial, sans-serif;
-	font-size: 16px;
+  font-size: 16px;
+  color: $--font-color;
 	word-spacing: 1px;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%;
@@ -56,6 +57,12 @@ body{
   width: 100%;
   #{$pos}: 0;
 }
+// 相对定位宽度百分比居中
+@mixin relativeCenter ($per) {
+  width: $per;
+  margin: 0 auto;
+}
+
 // 全屏
 @mixin fullPage {
   position: fixed;
@@ -90,4 +97,10 @@ body{
 @mixin border($border) {
   #{$border}: 1px solid $--basic-bg-color;
 }
-
+// 悬浮样式
+@mixin cursor($color){
+  cursor: pointer;
+  &:hover{
+    color: $color;
+  }
+}
