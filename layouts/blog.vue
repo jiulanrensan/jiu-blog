@@ -2,7 +2,7 @@
   <div style="position: relative">
     <Header />
     <TitleRow />
-    <Loading />
+    <Loading v-if="false" />
     <Nuxt />
   </div>
 </template>

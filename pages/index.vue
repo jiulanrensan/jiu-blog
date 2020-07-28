@@ -1,5 +1,7 @@
 <template>
-  <div></div>
+  <div class="container">
+    <Nuxt />
+  </div>
 </template>
 
 <script>
@@ -8,6 +10,10 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+@import '@/assets/css/common.scss';
+.container{
+  @include maxWidth($--max-width);
+  padding-top: $--basic-width*11;
+}
 </style>
