@@ -26,19 +26,22 @@ export default {
 </script>
 
 <style>
+  .el-dropdown{
+    font-size: 16px;
+  }
   .el-dropdown-link {
     cursor: pointer;
     color: #409EFF;
     /* 去除点击后出现的边框 */
     outline: none;
   }
-  /* .el-icon-arrow-down {
-    font-size: 12px;
-  } */
+  .el-icon-arrow-down {
+    font-size: 16px;
+  }
   .demonstration {
     display: block;
     color: #8492a6;
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 20px;
   }
 </style>
