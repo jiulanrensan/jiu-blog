@@ -41,6 +41,15 @@ export default {
 .article{
   @include cursorBg($--article-bg-color);
   @include border(border-bottom);
+  &:hover{
+    /deep/.article_action{
+      li{
+        &:last-child{
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 .article-container{
   @include relativeCenter(95%);

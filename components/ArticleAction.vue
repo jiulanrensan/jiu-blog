@@ -8,6 +8,9 @@
       <img src="@/assets/img/comment.svg" alt="">
       <div>{{content.commentsCount}}</div>
     </li>
+    <li>
+      <img src="@/assets/img/share.svg" title="分享">
+    </li>
   </ul>
 </template>
 
@@ -39,6 +42,9 @@ export default {
     @include cursorBg($--basic-bg-color);
     &:first-child{
       border-left: 2px solid $--basic-bg-color;
+    }
+    &:last-child{
+      opacity: 0;
     }
     div{
       padding: 0 $--basic-width/5;
