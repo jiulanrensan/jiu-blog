@@ -22,7 +22,7 @@
         </ArticleItem>
       </div>
     </div>
-    <div class="right"></div>
+    <div class="right">{{nums}}</div>
   </section>
 </template>
 
@@ -54,6 +54,7 @@ export default {
       viewerHasLiked: false
     }
     const RECOMMENDS = Array.from({length: 10}, () => OBJ)
+    const NUMS = context.app.api('test')
     return {
       recommends: RECOMMENDS,
       articleInfo: RECOMMENDS.map(el => {
@@ -70,7 +71,8 @@ export default {
           likeCount: el.likeCount,
           commentsCount: el.commentsCount
         }
-      })
+      }),
+      nums: NUMS
     }
   },
   data () {
@@ -78,7 +80,8 @@ export default {
       homeTitle: HOMETITLE,
       recommends: [],
       articleInfo: [],
-      articleAction: []
+      articleAction: [],
+      nums: 0
     }
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable */
 //参考文章 https://segmentfault.com/a/1190000016474460
 import axios from 'axios'
 
@@ -7,11 +8,10 @@ const instance = axios.create({
   timeout: 60000
 })
 
-let source = {}
-let requestList = []
+const source = {}
+const requestList = []
 
 Object.assign(instance.defaults, {
-  baseURL: baseUrl,
   // 跨域是否带Token
   withCredentials: true,
   // 响应的数据格式 json / blob /document /arraybuffer / text / stream

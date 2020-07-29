@@ -3,9 +3,14 @@ class Api {
   constructor (http) {
     this.http = http
   }
-  article (params = {}, showLoading = true) {
-    return this.http.get('/webapi/query')
+
+  article (params = {}, options = {showLoading: true}) {
+    return this.http.get('/webapi/query', params, options)
+  }
+
+  test (params = {}, options) {
+    return 1234
   }
 }
 
-export default new Api(http)
+export const api = new Api(http)
