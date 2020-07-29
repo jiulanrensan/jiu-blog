@@ -62,7 +62,15 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    proxy: true
+  },
+  proxy: {
+    '/webapi': {
+      target: 'https://web-api.juejin.im',
+      pathRewrite: { '^/webapi': '' }
+    },
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

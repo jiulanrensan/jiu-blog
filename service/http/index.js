@@ -12,7 +12,11 @@ let requestList = []
 
 Object.assign(instance.defaults, {
   baseURL: baseUrl,
-  timeout,
+  // 跨域是否带Token
+  withCredentials: true,
+  // 响应的数据格式 json / blob /document /arraybuffer / text / stream
+  responseType: 'json',
+  'X-Agent': 'Juejin/Web',
   headers: { 'Content-Type': 'application/json;charset=UTF-8'}
 })
 
