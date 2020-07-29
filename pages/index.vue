@@ -13,7 +13,11 @@ export default {
 <style lang="scss">
 @import '@/assets/css/common.scss';
 .container{
-  @include maxWidth($--max-width);
+  max-width: $--max-width;
+  margin: auto;
+  @include maxWidth980{
+    width: 100%;
+  }
   padding-top: $--basic-width*11;
 }
 </style>

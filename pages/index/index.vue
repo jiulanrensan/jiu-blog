@@ -61,6 +61,7 @@ export default {
         return {
           originalUrl: el.originalUrl,
           user: el.user,
+          hot: el.hot,
           updatedAt: el.updatedAt,
           tags: el.tags
         }
@@ -100,6 +101,7 @@ export default {
     }
   }
   .right{
+    display: block;
     margin-left: $--basic-width;
     width: $--basic-width*24;
   }
@@ -126,7 +128,7 @@ export default {
     }
   }
   .left-content{
-    @include relativeCenter(95%);
+    
   }
 }
 </style>

@@ -1,6 +1,7 @@
 // variables
 $--primary-color: #007fff;
 $--basic-bg-color: #f4f5f5;
+$--article-bg-color: rgba(#f4f5f5, .5);
 $--white-bg-color: #fff;
 $--font-color: #8492a6;
 $--max-width: 960px;
@@ -97,11 +98,18 @@ body{
 @mixin border($border) {
   #{$border}: 1px solid $--basic-bg-color;
 }
-// 悬浮样式
+// 悬浮字体样式
 @mixin cursor($color){
   cursor: pointer;
   &:hover{
     color: $color;
+  }
+}
+// 悬浮背景样式
+@mixin cursorBg($color){
+  cursor: pointer;
+  &:hover{
+    background-color: $color;
   }
 }
 

@@ -1,7 +1,13 @@
 <template>
   <ul class="article_action">
-    <li>{{content.likeCount}}</li>
-    <li>{{content.commentsCount}}</li>
+    <li>
+      <img src="@/assets/img/like.svg" alt="">
+      <div>{{content.likeCount}}</div>
+    </li>
+    <li>
+      <img src="@/assets/img/comment.svg" alt="">
+      <div>{{content.commentsCount}}</div>
+    </li>
   </ul>
 </template>
 
@@ -25,10 +31,16 @@ export default {
     font-size: 14px;
     font-weight: bold;
     border: 2px solid $--basic-bg-color;
-    padding: $--basic-width/5 $--basic-width/2;
+    padding: 0 $--basic-width/2;
     border-left: none;
+    line-height: 20px;
+    @include flexCenter(center);
+    @include cursorBg($--basic-bg-color);
     &:first-child{
       border-left: 2px solid $--basic-bg-color;
+    }
+    div{
+      padding: 0 $--basic-width/5;
     }
   }
 }
