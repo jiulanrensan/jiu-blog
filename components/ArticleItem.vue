@@ -40,6 +40,7 @@ export default {
 @import '@/assets/css/common.scss';
 .article{
   @include cursorBg($--article-bg-color);
+  @include border(border-bottom);
 }
 .article-container{
   @include relativeCenter(95%);

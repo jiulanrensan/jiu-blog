@@ -98,17 +98,16 @@ body{
 @mixin border($border) {
   #{$border}: 1px solid $--basic-bg-color;
 }
-// 悬浮字体样式
-@mixin cursor($color){
+// 悬浮样式
+@mixin cursor{
   cursor: pointer;
   &:hover{
-    color: $color;
+    @content;
   }
 }
 // 悬浮背景样式
 @mixin cursorBg($color){
-  cursor: pointer;
-  &:hover{
+  @include cursor{
     background-color: $color;
   }
 }

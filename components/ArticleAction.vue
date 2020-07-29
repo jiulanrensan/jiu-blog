@@ -34,6 +34,7 @@ export default {
     padding: 0 $--basic-width/2;
     border-left: none;
     line-height: 20px;
+    background-color: $--white-bg-color;
     @include flexCenter(center);
     @include cursorBg($--basic-bg-color);
     &:first-child{
