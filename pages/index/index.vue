@@ -88,6 +88,7 @@ export default {
 @import '@/assets/css/common.scss';
 .home{
   @include flexCenter(center);
+  align-items: flex-start;
   .left,
   .right{
     // height: $--basic-width*10;
@@ -103,6 +104,7 @@ export default {
     display: block;
     margin-left: $--basic-width;
     width: $--basic-width*24;
+    height: 300px;
   }
   @include maxWidth980{
     .right{
@@ -127,9 +129,6 @@ export default {
       width: $--basic-width;
       height: $--basic-width;
     }
-  }
-  .left-content{
-    
   }
 }
 </style>
