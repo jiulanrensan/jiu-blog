@@ -1,7 +1,9 @@
 <template>
-  <div class="container">
+  <div style="position: relative">
     <TitleRow />
-    <Nuxt />
+    <div class="container">
+      <Nuxt />
+    </div>
   </div>
 </template>
 
