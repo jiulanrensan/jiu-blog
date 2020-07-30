@@ -1,5 +1,5 @@
 export const HEADER = [
-  {'label': '首页', 'value': ''},
+  {'label': '首页', 'value': 'index'},
   {'label': '沸点', 'value': 'hot'},
   {'label': '话题', 'value': 'topic'},
   {'label': '小册', 'value': 'book'},
