@@ -7,7 +7,7 @@
 				</nuxt-link>
 			</div>
 			<div class="jiu_header-gt980">
-				<ul>
+				<ul @click="handleTurnPage">
 					<li v-for="item in navItems" :key="item.value">{{item.label}}</li>
 				</ul>
 			</div>
@@ -61,7 +61,10 @@ export default {
 		}
 	},
 	methods: {
-		handleClick () {}
+		handleClick () {},
+		handleTurnPage (event) {
+			console.log(event);
+		}
 	}
 }
 </script>
