@@ -22,6 +22,7 @@ components目录下添加header组件，eslint报错'replace `↹↹↹` with `�
 ### 4. 通过plugins注入全局方法(在服务端)
 [官网文档](https://zh.nuxtjs.org/guide/plugins#%E4%BD%BF%E7%94%A8-vue-%E6%8F%92%E4%BB%B6)
 
+因为在asyncData里不能引用this,所以只能赋值给context
 ```
 // 注入 context
 // plugins/ctx-inject.js
