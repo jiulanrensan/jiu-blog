@@ -6,8 +6,9 @@
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item 
         v-for="item in dropDownContent"
-        :key="item.value">
-        {{item.label}}
+        :key="item.value"
+        :command="item.value">
+        <nuxt-link :to="{ name: item.value }">{{ item.label }}</nuxt-link>
       </el-dropdown-item>
     </el-dropdown-menu>
   </el-dropdown>
@@ -35,6 +36,9 @@ export default {
     color: $--primary-color;
     /* 去除点击后出现的边框 */
     outline: none;
+  }
+  .el-dropdown-menu__item{
+    @include link();
   }
   .el-icon-arrow-down {
     font-size: $--basic-font-size;

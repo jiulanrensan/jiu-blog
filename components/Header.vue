@@ -7,8 +7,10 @@
 				</nuxt-link>
 			</div>
 			<div class="jiu_header-gt980">
-				<ul @click="handleTurnPage">
-					<li v-for="item in navItems" :key="item.value">{{item.label}}</li>
+				<ul>
+					<li v-for="item in navItems" :key="item.value" :data-set="item.value">
+						<nuxt-link :to="{ name: item.value }">{{ item.label }}</nuxt-link>
+					</li>
 				</ul>
 			</div>
 			<div class="jiu_header-lt980">
@@ -62,9 +64,6 @@ export default {
 	},
 	methods: {
 		handleClick () {},
-		handleTurnPage (event) {
-			console.log(event);
-		}
 	}
 }
 </script>
@@ -107,6 +106,7 @@ export default {
 						cursor: pointer;
 						color: $--primary-color;
 					}
+					@include link();
 				}
 			}
 		}
