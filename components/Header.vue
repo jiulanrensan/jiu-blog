@@ -84,6 +84,7 @@ export default {
 	height: 60px;
 	@include border(border-bottom);
 	@include absoluteBox(top);
+	z-index: 10;
 
 	.jiu_header-nav{
 		@include flexCenter(left);

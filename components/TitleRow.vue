@@ -27,6 +27,7 @@ export default {
 @import '@/assets/css/common.scss';
 .jiu_title_row{
   @include absoluteBox(top);
+  z-index: 10;
   top: 60px;
   color: $--font-color;
   background-color: $--white-bg-color;
