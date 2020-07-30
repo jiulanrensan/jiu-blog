@@ -1,24 +1,27 @@
 /* eslint-disable */
 //参考文章 https://segmentfault.com/a/1190000016474460
 import axios from 'axios'
-
-const instance = axios.create({
-  // 基本配置
-  baseUrl: 'http://127.0.0.1:3000',
-  timeout: 60000
-})
-
-const source = {}
-const requestList = []
-
-Object.assign(instance.defaults, {
+const CONFIG = {
+  timeout: 60000,
   // 跨域是否带Token
   withCredentials: true,
   // 响应的数据格式 json / blob /document /arraybuffer / text / stream
   responseType: 'json',
-  'X-Agent': 'Juejin/Web',
-  headers: { 'Content-Type': 'application/json;charset=UTF-8'}
-})
+  headers: { 
+    'Content-Type': 'application/json;charset=UTF-8',
+    'X-Agent': 'Juejin/Web',
+  }
+}
+
+if (process.server) {
+  CONFIG.baseURL = `http://${process.env.HOST || '127.0.0.1'}:${process.env.PORT || 3000}`
+}
+
+const instance = axios.create(CONFIG)
+
+const source = {}
+const requestList = []
+
 
 // 请求拦截器
 instance.interceptors.request.use(config => {
@@ -37,12 +40,12 @@ instance.interceptors.response.use(response => {
   return response
 }, function (err) {
   // 报错信息没法获取config
-  if (instance.isCancel(err)) {
+  if (axios.isCancel(err)) {
     // 根据业务场景确定是否需要清空
     // 例如：页面跳转前，清空离开页面的请求
     requestList.length = 0
   } else {
-    console.log(err)
+    // console.log('response error',err)
   }
   return Promise.reject(err)
 })
@@ -75,7 +78,7 @@ function request(method, api, params = {}, options = {}) {
       {
         url: api,
         method,
-        cancelToken: new instance.CancelToken(function executor(c) {
+        cancelToken: new axios.CancelToken(function executor(c) {
           source[api] = c;
         })
       },
@@ -84,10 +87,9 @@ function request(method, api, params = {}, options = {}) {
     requestList.push(api)
     instance.request(config)
     .then(res => {
-      resolve(res)
+      resolve(res) 
     })
     .catch(err => {
-      console.log(err)
       reject(err)
     })
   })
@@ -102,4 +104,3 @@ const http = {
   source: source
 }
 export default http
-

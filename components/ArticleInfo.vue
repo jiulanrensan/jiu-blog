@@ -2,7 +2,7 @@
   <ul class="article_info">
     <li v-if="content.hot">荐</li>
     <li>专栏</li>
-    <li>{{content.user.username}}</li>
+    <li>{{content.user && content.user.username}}</li>
     <li>{{updatedTime}}</li>
   </ul>
 </template>

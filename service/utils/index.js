@@ -26,6 +26,7 @@ export const formatTimeText = function (time) {
  */
 export const timeToNow = function (timeStr) {
   // 1 day = 24 h = 24*60 min = 24*60*60 s = 24*60*60*1000 ms
+  if (!timeStr) return ''
   const time = new Date(timeStr).getTime()
   const cur = new Date().getTime()
   let gap = time - cur

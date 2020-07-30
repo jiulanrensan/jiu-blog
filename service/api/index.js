@@ -5,7 +5,7 @@ class Api {
   }
 
   article (params = {}, options = {showLoading: true}) {
-    return this.http.get('/webapi/query', params, options)
+    return this.http.post('/webapi/query', params, options)
   }
 
   test (params = {}, options) {
