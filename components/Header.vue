@@ -8,7 +8,7 @@
 			</div>
 			<div class="jiu_header-gt980">
 				<ul>
-					<li v-for="item in navItems" :key="item.value" :data-set="item.value">
+					<li v-for="item in navItems" :key="item.value" :data-set="item.value" :class="{current: routeName === item.label}">
 						<nuxt-link :to="{ name: item.value }">{{ item.label }}</nuxt-link>
 					</li>
 				</ul>
@@ -17,7 +17,8 @@
 				<jiu-drop-down :drop-down-content="navItems">
 					<!-- 默认插槽 -->
 					<template>
-						首页<i class="el-icon-arrow-down el-icon--right"></i>
+						{{routeName}}
+						<i class="el-icon-arrow-down el-icon--right"></i>
 					</template>
 				</jiu-drop-down>
 			</div>
@@ -59,7 +60,13 @@ export default {
 	data () {
 		return {
 			navItems: HEADER,
-			searchContent: ''
+			searchContent: '',
+		}
+	},
+	computed: {
+		routeName () {
+			const filterRouter = this.navItems.filter(el => el.value === this.$route.name)
+			return filterRouter[0].label
 		}
 	},
 	methods: {
@@ -104,6 +111,9 @@ export default {
 					padding: $--basic-width;
 					&:hover{
 						cursor: pointer;
+						color: $--primary-color;
+					}
+					&.current{
 						color: $--primary-color;
 					}
 					@include link();
