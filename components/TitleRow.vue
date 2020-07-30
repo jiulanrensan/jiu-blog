@@ -1,7 +1,9 @@
 <template>
   <nav class="jiu_title_row">
     <ul class="jiu_title_row-box" @click="handleTitle">
-      <li v-for="item in categories" :key="item.title">{{item.title}}</li>
+      <li v-for="item in categories" :key="item.title">
+        <nuxt-link :to="item.router">{{ item.title }}</nuxt-link>
+      </li>
     </ul>
   </nav>
 </template>
@@ -37,6 +39,7 @@ export default {
       @include cursor{
         color: $--primary-color;
       };
+      @include link();
       &:first-child{
         padding-left: 0;
       }

@@ -27,6 +27,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import {HOME_TITLE} from '@/service/defaultConfig'
 
 // 页数
@@ -50,22 +51,22 @@ const PARAMS = {
   }
 }
 export default {
-  async asyncData (context) {
-    const {app, error} = context
-    try {
-      const res = await app.api('article', PARAMS)
-      // res?.data?.articleFeed?.items 直接报错：You may need an additional loader to handle the result of these loaders.
-      const articleItems = res.data.articleFeed.items
-      const RECOMMENDS = !articleItems ? [] : articleItems.map(el => el.node)
-      return {
-        recommends: RECOMMENDS,
-      }
-    } catch (err) {
-      // eslint-disable-next-line
-      console.log('err', err.response);
-      error(err.response)
-    }
-  },
+  // async asyncData (context) {
+  //   const {app, error} = context
+  //   try {
+  //     const res = await app.api('article', PARAMS)
+  //     // res?.data?.articleFeed?.items 直接报错：You may need an additional loader to handle the result of these loaders.
+  //     const articleItems = res.data.articleFeed.items
+  //     const RECOMMENDS = !articleItems ? [] : articleItems.map(el => el.node)
+  //     return {
+  //       recommends: RECOMMENDS,
+  //     }
+  //   } catch (err) {
+  //     // eslint-disable-next-line
+  //     console.log('err', err.response);
+  //     error(err.response)
+  //   }
+  // },
   data () {
     return {
       homeTitle: HOME_TITLE,

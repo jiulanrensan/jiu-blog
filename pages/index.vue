@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <TitleRow />
     <Nuxt />
   </div>
 </template>
