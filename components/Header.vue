@@ -89,6 +89,7 @@ export default {
 		.jiu_header-lt980{
 			display: none;
 			margin-left: $--basic-width*3;
+			flex: 1 1 auto;
 		}
 
 		.jiu_header-gt980{
@@ -134,6 +135,7 @@ export default {
 			}
 			.jiu_header-gt980,
 			.jiu_header-divider,
+			.jiu_header-search,
 			.jiu_header-write{
 				display: none;
 			}

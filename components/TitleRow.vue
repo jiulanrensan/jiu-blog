@@ -34,8 +34,10 @@ export default {
   .jiu_title_row-box{
     @include flexCenter(left);
     @include maxWidth($--max-width);
+    overflow: auto;
     li{
       padding: $--basic-width $--basic-width;
+      flex: none;
       @include cursor{
         color: $--primary-color;
       };
