@@ -5,7 +5,7 @@
 <script>
 /* eslint-disable */
 export default {
-  async asyncData ({redirect, route}) {
+  async asyncData ({redirect, route}) {;
     redirect('/recommand')
   }
 }

@@ -20,8 +20,8 @@
       />
     </svg>
     <div class="info">
-      <p v-if="info.code === '404'">
-        <NuxtLink to="/">back_to_home</NuxtLink>
+      <p v-if="info.status === 404">
+        <NuxtLink to="/">back to home</NuxtLink>
       </p>
       <p class="status">{{info.status}}</p>
       <p class="status_text">{{info.statusText}}</p>
@@ -41,6 +41,17 @@ export default {
   computed: {
     info () {
       if (!this.error) return {}
+      // 默认error
+      // {message,path,statusCode}
+      if (this.error.message) {
+        const {message, path, statusCode} = this.error
+        return {
+          status: statusCode,
+          statusText: message,
+          path
+        }
+      }
+      // 自定义error，返回res.response
       const {status, statusText} = this.error
       return {
         status,

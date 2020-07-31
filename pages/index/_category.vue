@@ -16,7 +16,7 @@
 
 <script>
 /* eslint-disable */
-import {ARTICLE_NAV, CATEGORY} from '@/service/defaultConfig'
+import {ARTICLE_NAV, HOME_CATEGORY} from '@/service/defaultConfig'
 
 // 页数
 // eslint-disable-next-line
@@ -82,6 +82,11 @@ export default {
     return {
       recommends: recommends
     }
+  },
+  validate({params, query}){
+    const {category} = params
+    const matchIdx = HOME_CATEGORY.findIndex(el => el.router.path.slice(1) === category)
+    return matchIdx !== -1
   },
   data () {
     return {
