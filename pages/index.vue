@@ -1,7 +1,7 @@
 <template>
   <div style="position: relative">
+    <TitleRow :categories="categories" />
     <div class="container">
-      <TitleRow :categories="categories" />
       <section class="home">
         <div class="left">
           <Nuxt />

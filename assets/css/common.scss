@@ -133,6 +133,7 @@ body{
   .container{
     max-width: $--max-width;
     margin: auto;
+    position: relative;
     @include maxWidth980{
       width: 100%;
     }
