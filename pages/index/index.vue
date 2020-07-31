@@ -1,15 +1,6 @@
 <template>
   <div class="left">
-    <section>
-      <nav class="left-title">
-        <div v-for="(item, index) in homeTitle" :key="item.value">
-          <div class="left-title-text">{{item.label}}</div>
-          <div class="left-title-divider">
-            <el-divider v-if="index !== homeTitle.length - 1" direction="vertical"></el-divider>
-          </div>
-        </div>
-      </nav>
-    </section>
+    <ArticleNav />
     <div class="left-content">
       <ArticleItem v-for="item in recommends" :key="item.id" :content="item">
         <template slot="article_info">
@@ -25,14 +16,14 @@
 
 <script>
 /* eslint-disable */
-import {HOME_TITLE, CATEGORY} from '@/service/defaultConfig'
+import {ARTICLE_NAV, CATEGORY} from '@/service/defaultConfig'
 
 // 页数
 // eslint-disable-next-line
 const first = 20
 // eslint-disable-next-line
 // 分类
-const order = HOME_TITLE[0].value
+const order = ARTICLE_NAV[0].value
 const PARAMS = {
   "operationName": "",
   "query": "",
@@ -66,7 +57,7 @@ export default {
   // },
   data () {
     return {
-      homeTitle: HOME_TITLE,
+      article_nav: ARTICLE_NAV,
       recommends: [],
     }
   }
@@ -76,23 +67,4 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/css/common.scss';
 
-.left-title{
-  @include relativeCenter(95%);
-  font-size: $--basic-font-size*0.875;
-  @include flexCenter(left);
-  &>div{
-    @include flexCenter(left);
-  }
-  .left-title-text{
-    padding: $--basic-width;
-    @include cursor{
-      color: $--primary-color;
-    };
-  }
-  .left-title-divider{
-    @include flexCenter(center);
-    width: $--basic-width;
-    height: $--basic-width;
-  }
-}
 </style>

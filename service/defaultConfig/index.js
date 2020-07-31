@@ -19,7 +19,7 @@ export const CATEGORY = [
   { router: { path: '/home/article' }, title: '阅读' }
 ]
 
-export const HOME_TITLE = [
+export const ARTICLE_NAV = [
   {'label': '热门', 'value': 'POPULAR'},
   {'label': '最新', 'value': 'NEWEST'},
   {'label': '热榜', 'value': 'THREE_DAYS_HOTTEST'}
