@@ -1,7 +1,7 @@
 <template>
   <nav class="jiu_title_row">
     <ul class="jiu_title_row-box" @click="handleTitle">
-      <li v-for="item in categories" :key="item.title">
+      <li v-for="item in categories" :key="item.title" :class="{currentTitleShow: routePath === item.title}">
         <nuxt-link :to="item.router">{{ item.title }}</nuxt-link>
       </li>
     </ul>
@@ -19,6 +19,13 @@ export default {
   data () {
     return {
     }
+  },
+  computed: {
+    routePath () {
+			const {path} = this.$route
+			const filterRouter = this.categories.filter(el => el.router.path === path)
+			return filterRouter && filterRouter.length ? filterRouter[0].title : ''
+		}
   },
   methods: {
     handleTitle (ev) {

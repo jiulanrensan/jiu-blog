@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import {TOP_CATEGORY} from '@/service/defaultConfig'
-const title = TOP_CATEGORY // eslint-disable-line
+import {HOT_CATEGORY} from '@/service/defaultConfig'
+const title = HOT_CATEGORY // eslint-disable-line
 export default {
   layout: 'blog',
   asyncData (context) {
@@ -18,7 +18,7 @@ export default {
   },
   data () {
     return {
-      categories: TOP_CATEGORY,
+      categories: HOT_CATEGORY,
       title: []
     }
   }

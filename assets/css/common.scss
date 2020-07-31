@@ -33,6 +33,10 @@ body{
   outline: none;
 }
 
+.currentTitleShow{
+  color: $--primary-color;
+}
+
 // flex布局垂直居中, 水平居中/两端对齐/每个项目两侧的间隔相等
 @mixin flexCenter($type) {
   box-sizing: border-box;
@@ -140,3 +144,4 @@ body{
     padding-top: $--basic-width*11;
   }
 }
+

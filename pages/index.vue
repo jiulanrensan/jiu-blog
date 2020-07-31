@@ -13,12 +13,12 @@
 </template>
 
 <script>
-import {CATEGORY} from '@/service/defaultConfig'
+import {HOME_CATEGORY} from '@/service/defaultConfig'
 export default {
   layout: 'blog',
   data () {
     return {
-      categories: CATEGORY,
+      categories: HOME_CATEGORY,
     }
   }
 }

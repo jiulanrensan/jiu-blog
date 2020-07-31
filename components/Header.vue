@@ -8,7 +8,7 @@
 			</div>
 			<div class="jiu_header-gt980">
 				<ul>
-					<li v-for="item in navItems" :key="item.value" :data-set="item.value" :class="{current: routeName === item.label}">
+					<li v-for="item in navItems" :key="item.value" :data-set="item.value" :class="{currentTitleShow: routeName === item.label}">
 						<nuxt-link :to="{ name: item.value }">{{ item.label }}</nuxt-link>
 					</li>
 				</ul>
@@ -65,8 +65,10 @@ export default {
 	},
 	computed: {
 		routeName () {
-			const filterRouter = this.navItems.filter(el => el.value === this.$route.name)
-			return filterRouter[0].label
+			// console.log(this.$route);
+			const {name} = this.$route
+			const filterRouter = this.navItems.filter(el => el.value === name.split('-')[0])
+			return filterRouter && filterRouter.length ? filterRouter[0].label : ''
 		}
 	},
 	methods: {
@@ -112,9 +114,6 @@ export default {
 					padding: $--basic-width;
 					&:hover{
 						cursor: pointer;
-						color: $--primary-color;
-					}
-					&.current{
 						color: $--primary-color;
 					}
 					@include link();

@@ -7,16 +7,16 @@ export const HEADER = [
 ]
 
 // 首页
-export const CATEGORY = [
-  { router: { name: 'index' }, title: '推荐' },
-  { router: { path: '/home/frontend' }, title: '前端' },
-  { router: { path: '/home/backend' }, title: '后端' },
-  { router: { path: '/home/android' }, title: 'Android' },
-  { router: { path: '/home/ios' }, title: 'iOS' },
-  { router: { path: '/home/ai' }, title: '人工智能' },
-  { router: { path: '/home/freebie' }, title: '工具资源' },
-  { router: { path: '/home/life' }, title: '代码人生' },
-  { router: { path: '/home/article' }, title: '阅读' }
+export const HOME_CATEGORY = [
+  { router: { path: '/recommand' }, title: '推荐' },
+  { router: { path: '/frontend' }, title: '前端' },
+  { router: { path: '/backend' }, title: '后端' },
+  { router: { path: '/android' }, title: 'Android' },
+  { router: { path: '/ios' }, title: 'iOS' },
+  { router: { path: '/ai' }, title: '人工智能' },
+  { router: { path: '/freebie' }, title: '工具资源' },
+  { router: { path: '/life' }, title: '代码人生' },
+  { router: { path: '/article' }, title: '阅读' }
 ]
 
 export const ARTICLE_NAV = [
@@ -27,7 +27,7 @@ export const ARTICLE_NAV = [
 
 
 // 沸点
-export const TOP_CATEGORY = [
+export const HOT_CATEGORY = [
   {'title': '推荐', router: { path: '/hot/recommended' }},
   {'title': '热门', router: { path: '/hot/hoted' }},
   {'title': '关注', router: { path: '/hot/following' }},
