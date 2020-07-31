@@ -1,34 +1,31 @@
 <template>
-  <section class="home">
-    <div class="left">
-      <section>
-        <nav class="left-title">
-          <div v-for="(item, index) in homeTitle" :key="item.value">
-            <div class="left-title-text">{{item.label}}</div>
-            <div class="left-title-divider">
-              <el-divider v-if="index !== homeTitle.length - 1" direction="vertical"></el-divider>
-            </div>
+  <div class="left">
+    <section>
+      <nav class="left-title">
+        <div v-for="(item, index) in homeTitle" :key="item.value">
+          <div class="left-title-text">{{item.label}}</div>
+          <div class="left-title-divider">
+            <el-divider v-if="index !== homeTitle.length - 1" direction="vertical"></el-divider>
           </div>
-        </nav>
-      </section>
-      <div class="left-content">
-        <ArticleItem v-for="item in recommends" :key="item.id" :content="item">
-          <template slot="article_info">
-            <ArticleInfo :content="item"></ArticleInfo>
-          </template>
-          <template slot="article_action">
-            <ArticleAction :content="item"></ArticleAction>
-          </template>
-        </ArticleItem>
-      </div>
+        </div>
+      </nav>
+    </section>
+    <div class="left-content">
+      <ArticleItem v-for="item in recommends" :key="item.id" :content="item">
+        <template slot="article_info">
+          <ArticleInfo :content="item"></ArticleInfo>
+        </template>
+        <template slot="article_action">
+          <ArticleAction :content="item"></ArticleAction>
+        </template>
+      </ArticleItem>
     </div>
-    <div class="right">广告</div>
-  </section>
+  </div>
 </template>
 
 <script>
 /* eslint-disable */
-import {HOME_TITLE} from '@/service/defaultConfig'
+import {HOME_TITLE, CATEGORY} from '@/service/defaultConfig'
 
 // 页数
 // eslint-disable-next-line
@@ -78,51 +75,24 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/css/common.scss';
-.home{
-  @include flexCenter(center);
-  align-items: flex-start;
-  .left,
-  .right{
-    // height: $--basic-width*10;
-    background-color: $--white-bg-color;
-  }
-  .left{
-    flex: 1 1 auto;
-    &>section{
-      @include border(border-bottom);
-    }
-  }
-  .right{
-    display: block;
-    margin-left: $--basic-width;
-    width: $--basic-width*24;
-    height: 300px;
-    text-align: center;
-    font-size: 30px;
-  }
-  @include maxWidth980{
-    .right{
-      display: none;
-    }
-  }
-  .left-title{
-    @include relativeCenter(95%);
-    font-size: $--basic-font-size*0.875;
+
+.left-title{
+  @include relativeCenter(95%);
+  font-size: $--basic-font-size*0.875;
+  @include flexCenter(left);
+  &>div{
     @include flexCenter(left);
-    &>div{
-      @include flexCenter(left);
-    }
-    .left-title-text{
-      padding: $--basic-width;
-      @include cursor{
-        color: $--primary-color;
-      };
-    }
-    .left-title-divider{
-      @include flexCenter(center);
-      width: $--basic-width;
-      height: $--basic-width;
-    }
+  }
+  .left-title-text{
+    padding: $--basic-width;
+    @include cursor{
+      color: $--primary-color;
+    };
+  }
+  .left-title-divider{
+    @include flexCenter(center);
+    width: $--basic-width;
+    height: $--basic-width;
   }
 }
 </style>
