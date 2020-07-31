@@ -9,11 +9,15 @@
 </template>
 
 <script>
-import {CATEGORY} from '@/service/defaultConfig'
 export default {
+  props: {
+    categories: {
+      type: Array,
+      default: () => []
+    }
+  },
   data () {
     return {
-      categories: CATEGORY
     }
   },
   methods: {

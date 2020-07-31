@@ -1,5 +1,5 @@
 <template>
-  <el-dropdown trigger="click">
+  <el-dropdown trigger="click" @command="handleCommand">
     <span class="el-dropdown-link">
       <slot></slot>
     </span>
@@ -21,6 +21,10 @@ export default {
     dropDownContent: {
       type: Array,
       default: () => []
+    }
+  },
+  methods: {
+    handleCommand (command) {
     }
   }
 }

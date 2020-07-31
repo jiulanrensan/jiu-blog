@@ -6,6 +6,7 @@ export const HEADER = [
   {'label': '活动', 'value': 'activity'}
 ]
 
+// 首页
 export const CATEGORY = [
   { router: { name: 'index' }, title: '推荐' },
   { router: { path: '/home/frontend' }, title: '前端' },
@@ -22,4 +23,12 @@ export const HOME_TITLE = [
   {'label': '热门', 'value': 'POPULAR'},
   {'label': '最新', 'value': 'NEWEST'},
   {'label': '热榜', 'value': 'THREE_DAYS_HOTTEST'}
+]
+
+
+// 沸点
+export const TOP_CATEGORY = [
+  {'title': '推荐', router: { path: '/hot/recommended' }},
+  {'title': '热门', router: { path: '/hot/hoted' }},
+  {'title': '关注', router: { path: '/hot/following' }},
 ]

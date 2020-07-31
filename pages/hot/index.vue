@@ -8,12 +8,18 @@
 </template>
 
 <script>
-import {CATEGORY} from '@/service/defaultConfig'
+import {TOP_CATEGORY} from '@/service/defaultConfig'
+const title = TOP_CATEGORY // eslint-disable-line
 export default {
   layout: 'blog',
+  asyncData (context) {
+    // 获取推荐topic
+    // https://apinew.juejin.im/recommend_api/v1/tag/recommend_topic_list
+  },
   data () {
     return {
-      categories: CATEGORY
+      categories: TOP_CATEGORY,
+      title: []
     }
   }
 }

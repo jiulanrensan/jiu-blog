@@ -128,3 +128,14 @@ body{
     color: inherit;
   }
 }
+// 容器样式
+@mixin container {
+  .container{
+    max-width: $--max-width;
+    margin: auto;
+    @include maxWidth980{
+      width: 100%;
+    }
+    padding-top: $--basic-width*11;
+  }
+}
