@@ -1,31 +1,17 @@
 <template>
-  <div style="position: relative">
-    <TitleRow :categories="categories" />
-    <div class="container">
-      <Nuxt />
-    </div>
-  </div>
+  <div></div>
 </template>
 
 <script>
-import {HOT_CATEGORY} from '@/service/defaultConfig'
-const title = HOT_CATEGORY // eslint-disable-line
+/* eslint-disable */
 export default {
-  layout: 'blog',
-  asyncData (context) {
-    // 获取推荐topic
-    // https://apinew.juejin.im/recommend_api/v1/tag/recommend_topic_list
-  },
-  data () {
-    return {
-      categories: HOT_CATEGORY,
-      title: []
-    }
+  async asyncData ({redirect, route}) {;
+    redirect('/hot/recommended')
   }
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '@/assets/css/common.scss';
-@include container();
+
 </style>
