@@ -50,6 +50,10 @@ export default {
 .row_show{
   display: none;
 }
+.column_show{
+  display: flex;
+  align-items: flex-start;
+}
 .container{
   padding-top: $--basic-width*8;
   .home{
@@ -61,6 +65,7 @@ export default {
         flex: 1;
         background: $--white-bg-color;
         padding: $--basic-width;
+        align-items: flex-start;
         .topic_content-text{
           margin-left: $--basic-width*6;
           margin-top: $--basic-width;
