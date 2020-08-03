@@ -1,13 +1,22 @@
 <template>
   <div style="position: relative">
-    <div class="title_row">
+    <div class="row_show">
       <TitleRow :categories="categories" dir="row" />
     </div>
     <div class="container">
       <section class="home">
         <div class="left">
-          <TitleRow :categories="categories" dir="column" />
-          <div class="topic_content"></div>
+          <div class="column_show">
+            <TitleRow :categories="categories" dir="column" />
+          </div>
+          <div class="topic_content">
+            <HotItemTitle></HotItemTitle>
+            <div class="topic_content-text">
+              <!-- content text -->
+              1234
+            </div>
+          </div>
+          <!-- action -->
         </div>
         <div class="right">广告</div>
       </section>
@@ -23,6 +32,7 @@ export default {
   asyncData (context) {
     // 获取推荐topic
     // https://apinew.juejin.im/recommend_api/v1/tag/recommend_topic_list
+    // const recommend = []
   },
   data () {
     return {
@@ -36,15 +46,8 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/css/common.scss';
 @include layoutLR();
-@include maxWidth980{
-  .title_row{
-    display: block;
-  }
-  .container{
-    padding-top: $--basic-width*11;
-  }
-}
-.title_row{
+
+.row_show{
   display: none;
 }
 .container{
@@ -55,11 +58,27 @@ export default {
       @include flexCenter(center);
       align-items: flex-start;
       .topic_content{
-        height: 100px;
         flex: 1;
         background: $--white-bg-color;
+        padding: $--basic-width;
+        .topic_content-text{
+          margin-left: $--basic-width*6;
+          margin-top: $--basic-width;
+        }
       }
     }
+  }
+}
+
+@include maxWidth980{
+  .row_show{
+    display: block;
+  }
+  .column_show{
+    display: none;
+  }
+  .container{
+    padding-top: $--basic-width*11;
   }
 }
 
