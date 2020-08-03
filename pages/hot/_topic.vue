@@ -12,11 +12,11 @@
           <div class="topic_content">
             <HotItemTitle></HotItemTitle>
             <div class="topic_content-text">
-              <!-- content text -->
               1234
             </div>
+            <el-divider></el-divider>
+            <Action actionType="hot"></Action>
           </div>
-          <!-- action -->
         </div>
         <div class="right">广告</div>
       </section>
@@ -64,11 +64,10 @@ export default {
       .topic_content{
         flex: 1;
         background: $--white-bg-color;
-        padding: $--basic-width;
         align-items: flex-start;
         .topic_content-text{
-          margin-left: $--basic-width*6;
-          margin-top: $--basic-width;
+          margin: $--basic-width;
+          margin-left: $--basic-width*7;
         }
       }
     }

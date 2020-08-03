@@ -7,7 +7,7 @@
           <ArticleInfo :content="item"></ArticleInfo>
         </template>
         <template slot="article_action">
-          <ArticleAction :content="item"></ArticleAction>
+          <Action :content="item"></Action>
         </template>
       </ArticleItem>
     </div>

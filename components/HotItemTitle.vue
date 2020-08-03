@@ -24,8 +24,9 @@ export default {
 @import '@/assets/css/common.scss';
 .hot_item_title{
   @include flexCenter(center);
+  padding-top: $--basic-width;
   .hot_item_title-nail{
-    width: $--basic-width*6;
+    width: $--basic-width*7;
     @include flexCenter(center);
   }
   .hot_item_title-user{
@@ -42,6 +43,7 @@ export default {
   .hot_item_title-follow{
     font-size: 14px;
     padding: $--basic-width/4 $--basic-width;
+    margin-right: $--basic-width;
     border: 1px solid rgb(134, 240, 134);
     color: rgb(134, 240, 134);
     @include cursor();
